@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link type="image/x-icon" href="/public/favicon.ico" rel="shortcut icon" />
+    <link type="Image/x-icon" href="/public/favicon.ico" rel="icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Comments</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="app-container">
+        <div class="comments">
+          <h1 class="comments__header">Комментарии</h1>
+
+          <form name="newComment" class="new-comment">
+            <div class="new-comment__top">
+              <div class="new-comment__user">
+                <img
+                  class="new-comment__user-photo"
+                  src="/public/user.svg"
+                  alt="user photo"
+                />
+                <div class="new-comment__user-name">
+                  <input
+                    name="userName"
+                    type="text"
+                    required
+                    aria-describedby="user-name-error"
+                    placeholder="Введите имя"
+                  />
+                  <span id="user-name-error" class="errorMsg"></span>
+                </div>
+              </div>
+              <input
+                name="date"
+                type="date"
+                placeholder="Дата"
+                class="new-comment__date"
+              />
+            </div>
+            <hr class="new-comment__delimiter" />
+            <div class="new-comment__message">
+              <textarea
+                name="message"
+                type="text"
+                required
+                aria-describedby="message-error"
+                placeholder="Введите комментарий"
+              ></textarea>
+              <span id="message-error" class="errorMsg"></span>
+            </div>
+            <button class="new-comment__btn" type="submit">Отправить</button>
+          </form>
+
+          <div id="commentsList" class="comments-list">
+            <div hidden id="commentItem" class="comment-item">
+              <div class="comment-item__top">
+                <div class="comment-item__user">
+                  <img
+                    class="comment-item__user-photo"
+                    src="/public/user.svg"
+                    alt="user photo"
+                  />
+                  <span class="comment-item__user-name">John Doe</span>
+                </div>
+                <div class="comment-item__top-left">
+                  <time class="comment-item__time">сегодня, 16:23</time>
+                  <button data-delete class="comment-item__delete">
+                    <img data-delete src="public/trash.svg" alt="remove icon" />
+                  </button>
+                </div>
+              </div>
+              <p class="comment-item__message">
+                I really appreciate the insights and perspective shared in this
+                article. It's definitely given me something to think about and
+                has helped me see things from a different angle. Thank you for
+                writing and sharing!
+              </p>
+              <button data-like class="comment-item__like">
+                <svg
+                  data-like
+                  version="1.1"
+                  viewBox="0 0 512 512"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <path
+                    d="M340.8,98.4c50.7,0,91.9,41.3,91.9,92.3c0,26.2-10.9,49.8-28.3,66.6L256,407.1L105,254.6c-15.8-16.6-25.6-39.1-25.6-63.9  c0-51,41.1-92.3,91.9-92.3c38.2,0,70.9,23.4,84.8,56.8C269.8,121.9,302.6,98.4,340.8,98.4 M340.8,83C307,83,276,98.8,256,124.8  c-20-26-51-41.8-84.8-41.8C112.1,83,64,131.3,64,190.7c0,27.9,10.6,54.4,29.9,74.6L245.1,418l10.9,11l10.9-11l148.3-149.8  c21-20.3,32.8-47.9,32.8-77.5C448,131.3,399.9,83,340.8,83L340.8,83z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/validation.js"></script>
+  </body>
+</html>
