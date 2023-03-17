@@ -1,3 +1,3 @@
 export default {
-  base: '/comments-section/',
+  base: '/comments-sections/',
 }
